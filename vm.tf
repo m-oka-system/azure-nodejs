@@ -62,10 +62,24 @@ resource "azurerm_linux_virtual_machine" "vm" {
     write_accelerator_enabled = false
   }
 
+  identity {
+    type = "UserAssigned"
+    identity_ids = [
+      azurerm_user_assigned_identity.app.id
+    ]
+  }
+
   source_image_reference {
     offer     = "CentOS"
     publisher = "OpenLogic"
     sku       = "7_9-gen2"
     version   = "latest"
   }
+}
+
+# User Assigned Managed ID
+resource "azurerm_user_assigned_identity" "app" {
+  name                = "${var.prefix}-${var.env}-appsvr-mngid"
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = var.location
 }
