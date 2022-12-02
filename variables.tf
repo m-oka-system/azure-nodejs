@@ -22,3 +22,23 @@ variable "vm_size" {
 variable "vm_admin_username" {
   type = string
 }
+
+variable "db_port" {
+  type = string
+}
+
+variable "db_name" {
+  type = string
+}
+
+variable "db_username" {
+  type = string
+}
+
+variable "db_password" {
+  type = string
+}
+
+variable "db_size" {
+  type = string
+}
