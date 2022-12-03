@@ -46,3 +46,11 @@ variable "db_size" {
 variable "azuread_user_object_id" {
   type = string
 }
+
+variable "dns_zone_name" {
+  type = string
+}
+
+variable "custom_domain_host_name" {
+  type = string
+}
