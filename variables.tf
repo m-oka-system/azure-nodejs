@@ -42,3 +42,7 @@ variable "db_password" {
 variable "db_size" {
   type = string
 }
+
+variable "azuread_user_object_id" {
+  type = string
+}
