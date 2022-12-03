@@ -75,6 +75,11 @@ resource "azurerm_linux_virtual_machine" "vm" {
     sku       = "7_9-gen2"
     version   = "latest"
   }
+
+  tags = {
+    "Project" = var.prefix
+    "Env"     = var.env
+  }
 }
 
 # User Assigned Managed ID
